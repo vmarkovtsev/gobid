@@ -35,4 +35,9 @@ printf "\xde\xad\xbe\xef" > bid.bin
 go build -ldflags "-linkmode external -extldflags \"-Wl,-sectcreate,note,build-id,bid.bin\"" test.go 
 ```
 
+Warning
+-------
+Some Linux package builders, e.g. rpmbuild overwrite build-id during debug info
+extraction phase (stripping, etc.).
+
 License: MIT
